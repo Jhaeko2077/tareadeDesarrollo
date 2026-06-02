@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores Fundamentales - Infografía Vintage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #f4ebd8; /* Tono papel antiguo/sepia claro */
+            --text-ink: #3b2f2f; /* Tono tinta marrón oscuro */
+            --accent-gold: #b89758; /* Dorado envejecido */
+            --border-vintage: #8b7355;
+        }
+
+        body {
+            background-color: #2c241b; /* Fondo exterior oscuro para resaltar el "papel" */
+            font-family: 'Playfair Display', serif;
+            color: var(--text-ink);
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .infographic-container {
+            background-color: var(--bg-paper);
+            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png'); /* Textura sutil */
+            max-width: 800px;
+            width: 100%;
+            border: 8px double var(--border-vintage);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 50px rgba(139, 115, 85, 0.2);
+            padding: 3rem;
+            position: relative;
+        }
+
+        /* Esquinas ornamentales simplificadas con CSS */
+        .infographic-container::before,
+        .infographic-container::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border-vintage);
+        }
+
+        .infographic-container::before {
+            top: 10px; left: 10px;
+            border-right: none; border-bottom: none;
+        }
+        
+        .infographic-container::after {
+            bottom: 10px; right: 10px;
+            border-left: none; border-top: none;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--text-ink);
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-vintage);
+            padding-bottom: 1rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '❦';
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bg-paper);
+            padding: 0 10px;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+            color: #5c4b4b;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            position: relative;
+        }
+
+        /* Líneas divisorias internas */
+        .grid-container::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 1px;
+            background-color: var(--border-vintage);
+            opacity: 0.5;
+        }
+        
+        .grid-container::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 50%;
+            height: 1px;
+            background-color: var(--border-vintage);
+            opacity: 0.5;
+        }
+
+        .value-card {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            background-color: rgba(184, 151, 88, 0.1);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--text-ink);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .flourish {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .grid-container::before,
+            .grid-container::after {
+                display: none; /* Ocultar líneas divisorias en móviles */
+            }
+            .value-card {
+                border-bottom: 1px dashed var(--border-vintage);
+            }
+            .value-card:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic-container">
+        <h1>Pilares del Carácter</h1>
+        <p class="subtitle">Una guía atemporal para la rectitud y el buen proceder</p>
+
+        <div class="grid-container">
+            <!-- Justicia -->
+            <div class="value-card">
+                <div class="icon-container">
+                    <span class="icon">⚖️</span>
+                </div>
+                <h2>Justicia</h2>
+                <p>
+                    La virtud de otorgar a cada cual lo que le corresponde por derecho o equidad. 
+                    Es el fundamento del orden social, exigiendo imparcialidad, rectitud y el firme 
+                    propósito de no tolerar la opresión ni el abuso.
+                </p>
+            </div>
+
+            <!-- Responsabilidad -->
+            <div class="value-card">
+                <div class="icon-container">
+                    <span class="icon">⚓</span>
+                </div>
+                <h2>Responsabilidad</h2>
+                <p>
+                    El deber ineludible de asumir las consecuencias de los propios actos y omisiones. 
+                    Es el ancla del deber, manifestándose en el cumplimiento diligente de las obligaciones 
+                    y en la promesa de actuar con madurez y conciencia.
+                </p>
+            </div>
+
+            <!-- Discreción -->
+            <div class="value-card">
+                <div class="icon-container">
+                    <span class="icon">🗝️</span>
+                </div>
+                <h2>Discreción</h2>
+                <p>
+                    El arte del buen juicio y la prudencia en el obrar y el hablar. 
+                    Es la llave que guarda los secretos confiados, evitando la indiscreción y el 
+                    chisme, y eligiendo con sabiduría el momento y la forma de expresarse.
+                </p>
+            </div>
+
+            <!-- Honestidad -->
+            <div class="value-card">
+                <div class="icon-container">
+                    <span class="icon">🕯️</span>
+                </div>
+                <h2>Honestidad</h2>
+                <p>
+                    La luz inquebrantable de la verdad y la transparencia. 
+                    Es proceder con rectitud de intención, desterrando el engaño, la hipocresía 
+                    y el fraude, manteniendo la integridad incluso cuando nadie nos observa.
+                </p>
+            </div>
+        </div>
+
+        <div class="flourish">
+            ❧ ❦ ☙
+        </div>
+    </div>
+
+</body>
+</html>
